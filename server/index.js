@@ -2,6 +2,8 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
 const { recordMatchOutcome, getTopLeaderboard, getRecentMatches, initPromise } = require('./db');
 
 const app = express();
@@ -43,6 +45,16 @@ app.get('/api/history', async (req, res) => {
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Download PRD PDF
+app.get('/api/download-prd', (req, res) => {
+  const prdPath = path.join(__dirname, '..', 'Tactical_Grid_Duel_PRD.pdf');
+  if (fs.existsSync(prdPath)) {
+    res.download(prdPath, 'Tactical_Grid_Duel_PRD.pdf');
+  } else {
+    res.status(404).json({ error: 'PRD PDF not found on server' });
+  }
 });
 
 /**
