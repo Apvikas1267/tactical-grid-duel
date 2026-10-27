@@ -1,0 +1,14 @@
+{
+  "name": "tactical-grid-duel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm start --prefix server\" \"npm run dev --prefix client\"",
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
+    "db": "npm run db --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
