@@ -1,0 +1,33 @@
+1. Start the Complete Game (Client + Server Concurrently) 🚀
+
+cd "C:\Users\AP VIKAS\OneDrive\ENGINEERING\SKILL LAB\tactical-grid-duel"
+npm start
+
+This single command starts both with live color-coded logs:
+
+Frontend Game Client: http://localhost:5173
+Backend WebSocket Server: http://localhost:4000
+
+2. View the Live Database in the Terminal 📊
+
+To see the players leaderboard and match history tables directly in your terminal anytime:
+
+bash
+cd "C:\Users\AP VIKAS\OneDrive\ENGINEERING\SKILL LAB\tactical-grid-duel"
+npm run db
+
+3. Run the Automated Integration Tests 🧪
+
+To run the complete automated 1v1 battle test suite:
+
+cd "C:\Users\AP VIKAS\OneDrive\ENGINEERING\SKILL LAB\tactical-grid-duel\server"
+npm test
+
+
+4. Regenerate the PRD PDF 📄
+
+If you ever want to re-export the PDF document:
+
+
+cd "C:\Users\AP VIKAS\OneDrive\ENGINEERING\SKILL LAB\tactical-grid-duel\server"
+node generate_prd_pdf.js
